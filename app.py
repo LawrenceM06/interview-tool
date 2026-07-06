@@ -95,7 +95,7 @@ if st.session_state.setup_complete and not st.session_state.feedback_shown and n
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
 
-    if st.session_state.user_messages_count < 5:
+    if st.session_state.user_message_count < 5:
         if prompt := st.chat_input("Your answer.", max_chars = 1000):
             st.session_state.messages.append({"role": "user", "content": prompt})
             with st.chat_message("user"):
